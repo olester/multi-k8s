@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: isitpizzadaynl-tls
+spec:
+  secretName: isitpizzadaynl
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: isitpizzaday.nl
+  dnsNames:
+    - isitpizzaday.nl
+    - www.isitpizzaday.nl
+  acme:
+    config:
+      - https01:
+          ingressClass: nginx
+        domains:
+          - isitpizzaday.nl
+          - www.isitpizzaday.nl
