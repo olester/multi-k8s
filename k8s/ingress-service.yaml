@@ -10,9 +10,9 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
 spec:
   tls:
-    - hosts
-      - isitpizzaday.nl
-      - www.isitpizzaday.nl
+    - hosts:
+        - isitpizzaday.nl
+        - www.isitpizzaday.nl
       secretName: isitpizzadaynl
   rules:
     - host: isitpizzaday.nl
